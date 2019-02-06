@@ -8,16 +8,26 @@ pipeline {
                     agent {
                         label "lib-jenkins-win-2016"
                     }
-                    steps{
-                        bat "dir"
+                    stages{
+                        stage("dummy"){
+                            steps{
+                                bat "dir"
+                            }
+                            
+                        }
                     }
                 }
                 stage("Running on lib-win-docker"){
                     agent {
                         label "Docker"
                     }
-                    steps{
-                        bat "dir"
+                    stages{
+                        stage("dummy"){
+                            steps{
+                                bat "dir"
+                            }
+                            
+                        }
                     }
                 }
             }
