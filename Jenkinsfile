@@ -2,9 +2,12 @@ pipeline {
     agent none
 
     stages {
-        stage("Suff"){
+        stage("Test 1"){
             parallel{
                 stage("Dummy"){
+                    agent {
+                        label "lib-jenkins-win-2016"
+                    }
                     steps{
                         echo "hello"
                     }
