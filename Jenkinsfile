@@ -9,13 +9,13 @@ pipeline {
                         label "lib-jenkins-win-2016"
                     }
                     stages{
-                        stage("fib test on lib-jenkins-win-2016"){
+                        stage("Fibonacci test on lib-jenkins-win-2016"){
                             environment {
                                 PATH = "${tool 'CPython-3.6'};${PATH}"
                             }
                             steps{
-                                bat 'python -m timeit -r 5 -s "import fib" "fib.F(33)'
-                                
+                                // bat 'python -m timeit -r 5 -s "import fib" "fib.F(33)'
+                                bat 'python -m timeit -r 5 -s "import fib" "for i in range(30): print(fib.F(i))"'
                             }
                             
                         }
@@ -26,12 +26,12 @@ pipeline {
                         label "Docker"
                     }
                     stages{
-                        stage("fib test on lib-win-docker"){
+                        stage("Fibonacci test on lib-win-docker"){
                             environment {
                                 PATH = "${tool 'CPython-3.6'};${PATH}"
                             }
                             steps{
-                                bat 'python -m timeit -r 5 -s "import fib" "fib.F(33)'
+                                bat 'python -m timeit -r 5 -s "import fib" "for i in range(30): print(fib.F(i))"'
                                 
                             }
                             
