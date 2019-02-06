@@ -14,7 +14,7 @@ pipeline {
                 }
                 stage("Running on lib-win-docker"){
                     agent {
-                        label "lib-win-docker"
+                        label "Docker"
                     }
                     steps{
                         bat "dir"
