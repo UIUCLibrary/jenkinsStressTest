@@ -13,6 +13,9 @@ pipeline {
                     }
                 }
                 stage("Dummy2"){
+                    agent {
+                        label "Docker"
+                    }
                     steps{
                         echo "hello"
                     }
