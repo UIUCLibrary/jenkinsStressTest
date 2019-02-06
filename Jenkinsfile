@@ -4,20 +4,20 @@ pipeline {
     stages {
         stage("Test 1"){
             parallel{
-                stage("Dummy"){
+                stage("Running on lib-jenkins-win-2016"){
                     agent {
                         label "lib-jenkins-win-2016"
                     }
                     steps{
-                        echo "hello"
+                        bat "dir"
                     }
                 }
-                stage("Dummy2"){
+                stage("Running on lib-win-docker"){
                     agent {
-                        label "Docker"
+                        label "lib-win-docker"
                     }
                     steps{
-                        echo "hello"
+                        bat "dir"
                     }
                 }
             }
