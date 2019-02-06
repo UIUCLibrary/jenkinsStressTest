@@ -15,7 +15,7 @@ pipeline {
                             }
                             steps{
                                 // bat 'python -m timeit -r 5 -s "import fib" "fib.F(33)'
-                                bat 'python -m timeit -r 5 -s "import fib" "for i in range(30): print(fib.F(i))"'
+                                bat 'python -m timeit -r 5 -s "import fib" "for i in range(32): print(fib.F(i))"'
                             }
                             
                         }
@@ -31,7 +31,7 @@ pipeline {
                                 PATH = "${tool 'CPython-3.6'};${PATH}"
                             }
                             steps{
-                                bat 'python -m timeit -r 5 -s "import fib" "for i in range(30): print(fib.F(i))"'
+                                bat 'python -m timeit -r 5 -s "import fib" "for i in range(32): print(fib.F(i))"'
                                 
                             }
                             
