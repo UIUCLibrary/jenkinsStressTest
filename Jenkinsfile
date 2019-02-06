@@ -10,8 +10,12 @@ pipeline {
                     }
                     stages{
                         stage("dummy"){
+                            environment {
+                                PATH = "${tool 'CPython-3.6'};PATH"
+                            }
                             steps{
                                 bat "dir"
+                                // timeit -r 5 -s "import fib" "fib.F(33)"
                             }
                             
                         }
