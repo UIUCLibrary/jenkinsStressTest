@@ -1,6 +1,8 @@
 pipeline {
     agent none
-
+    options {
+        timestamps
+    }
     stages {
         stage("Test 1"){
             parallel{
